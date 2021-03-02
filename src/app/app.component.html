@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<button (click)="toInput()">INPUT</button>
+<!-- <button (click) = "toDetail()">DETAIL</button> -->
+<button (click) = "toFav()">FAVORITE</button>
+
+
+<h1>{{namaPage}}</h1>
+
+<router-outlet></router-outlet>
+
+
+<div *ngFor="let note of globalVar.getNote()">
+  <h4>{{note.judul}}</h4>
+  <p>{{note.isi.substring(0,100)}}</p>
+  
+</div>
