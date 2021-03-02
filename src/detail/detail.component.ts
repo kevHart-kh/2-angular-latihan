@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VarGlobService } from '../app/var-glob.service';
 
 @Component({
   selector: 'app-detail',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(public globalVar: VarGlobService) { }
 
   ngOnInit() {
   }

@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <button (click)="toInput()">INPUT</button>
 <!-- <button (click) = "toDetail()">DETAIL</button> -->
@@ -10,8 +9,21 @@
 <router-outlet></router-outlet>
 
 
+<hr>
+<h1>LIST NOTE</h1>
+
+<hr>
 <div *ngFor="let note of globalVar.getNote()">
-  <h4>{{note.judul}}</h4>
-  <p>{{note.isi.substring(0,100)}}</p>
-  
+  <div (click)="detail(note.id)">
+    <h4>{{note.judul}}</h4>
+    <p>{{note.isi}}</p>
+    <p>{{note.id}}</p>
+  </div>
+    <div *ngIf = "!note.isFavorite">
+      <button (click)="btnFav(note.id)">FAVORITE</button>
+    </div>
+    <div *ngIf = "note.isFavorite">
+      <button (click)="btnUnvaf(note.id)">UNFAVORITE</button>
+    </div>
+  <hr>
 </div>

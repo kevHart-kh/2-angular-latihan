@@ -1,0 +1,8 @@
+<div *ngFor="let note of this.globalVar.getFavoritedNote()">
+  <div (click)="detail(note.id)">
+    <h4>{{note.judul}}</h4>
+    <p>{{note.isi}}</p>
+    <p>{{note.id}}</p>
+  </div>
+  <hr>
+</div>
